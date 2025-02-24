@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    tools {
+        maven 'mvn3.9.9'  // Ensure this matches the name in Jenkins
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
